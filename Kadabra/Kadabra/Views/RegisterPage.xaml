@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kadabra.Views.RegisterPage"
+             xmlns:vm="clr-namespace:Kadabra.ViewModels"
+             >
+
+    <ContentPage.BindingContext>
+        <vm:RegisterViewModel/>
+    </ContentPage.BindingContext>
+
+    <StackLayout Orientation="Vertical"
+                 VerticalOptions="Center"                 
+                 Spacing="30"
+                 Padding="30">
+        
+        <Entry Text="{Binding Email}"
+               Placeholder="email"         
+               />
+
+        <Entry Text="{Binding Password}"
+               Placeholder="senha"
+               IsPassword="True"/>
+
+        <Entry Text="{Binding ConfirmPassword}"
+               Placeholder="confirmar senha"
+               IsPassword="True"/>
+
+        <Button Command="{Binding RegisterCommand}"
+                Text="Registrar"/>
+
+        <Label Text="{Binding Message}"/>
+
+        <Button Text="Logar"
+                Clicked="Button_OnClicked"/>
+
+    </StackLayout>
+
+</ContentPage>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kadabra.Views.LoginPage"
+             xmlns:vm="clr-namespace:Kadabra.ViewModels"
+             >
+
+    <ContentPage.BindingContext>
+        <vm:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout Orientation="Vertical">
+        <Entry Text="{Binding Username}"
+               FontSize="30"
+               Placeholder="username"
+               />
+        <Entry Text="{Binding Password}"
+               IsPassword="True"
+               FontSize="30"
+               Placeholder="password"
+               />
+
+        <Button Command="{Binding LoginCommand}"
+                Text="Login"
+                BackgroundColor="DodgerBlue"
+                TextColor="White"
+                FontSize="30"
+                />
+
+    </StackLayout>
+</ContentPage>
